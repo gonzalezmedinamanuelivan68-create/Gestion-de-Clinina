@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="edu.utj.dsm.poo.clinica.controlador.PacienteController" 
+      spacing="15" style="-fx-padding: 20;">
+      
+    <Label text="Administración de Pacientes" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <Label text="ID y Nombre:" prefWidth="100"/>
+        <TextField fx:id="txtId" promptText="ID Persona"/>
+        <TextField fx:id="txtNombre" promptText="Nombre completo"/>
+    </HBox>
+    
+    <HBox spacing="10">
+        <Label text="Estado:" prefWidth="100"/>
+        <ComboBox fx:id="cbEstado" promptText="Seleccione estado"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Firma Digital:" prefWidth="100"/>
+        <Button text="Seleccionar Imagen" onAction="#cargarImagen"/>
+        <ImageView fx:id="imgFirma" fitHeight="50" fitWidth="50" style="-fx-border-color: gray;"/>
+    </HBox>
+    
+    <HBox spacing="15" style="-fx-padding: 10 0 10 0;">
+        <Button text="Guardar" onAction="#guardarMedico"/>
+        <Button text="Editar" />
+        <Button text="Eliminar" />
+    </HBox>
+    
+
+    <TableView fx:id="tablaPacientes" prefHeight="200">
+        <columns>
+            <TableColumn text="ID" prefWidth="50"/>
+            <TableColumn text="Nombre" prefWidth="150"/>
+            <TableColumn text="Estado" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

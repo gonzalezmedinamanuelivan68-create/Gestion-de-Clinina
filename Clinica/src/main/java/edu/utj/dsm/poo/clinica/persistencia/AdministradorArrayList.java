@@ -1,0 +1,65 @@
+package edu.utj.dsm.poo.clinica.persistencia;
+
+import edu.utj.dsm.poo.clinica.modelo.Administrador;
+import java.util.ArrayList;
+
+
+/**
+ *
+ * @author Gonzalez Medina Manuel
+ */
+public class AdministradorArrayList implements Listable<Administrador>{
+    
+    private final ArrayList<Administrador> lista;
+
+    public AdministradorArrayList() {
+        this.lista = new ArrayList<>();
+    }
+    
+    
+
+    @Override
+    public boolean agregar(Administrador elemento) {
+        return lista.add(elemento);
+        
+    }
+
+    @Override
+    public boolean actualizar(Administrador elemento, int posicion) {
+        if (lista.contains(elemento)){
+            lista.set(posicion, elemento);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean eliminar(Administrador elemento) {
+       return lista.remove(elemento);
+    }
+
+    @Override
+    public ArrayList<Administrador> listar() {  
+        return (ArrayList<Administrador>) lista.clone();
+    }
+
+    @Override
+    public ArrayList<Administrador> consultar(String dato) {
+      return null;  
+    }
+
+    @Override
+    public Administrador traer(String dato) {
+        Administrador aux= new Administrador();
+        aux.setIdPersona(dato);
+        if(lista.contains(aux)){
+            int posicion = lista.indexOf(aux);
+            return lista.get(posicion);
+        }
+        
+        return null;
+    }
+
+   
+    
+}
