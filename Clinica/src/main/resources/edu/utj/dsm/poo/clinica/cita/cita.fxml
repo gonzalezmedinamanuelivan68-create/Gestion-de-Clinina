@@ -27,7 +27,7 @@
     </HBox>
     
     <HBox spacing="15" style="-fx-padding: 10 0 10 0;">
-        <Button text="Guardar" onAction="#guardarMedico"/>
+        <Button text="Guardar" onAction="#guardarCita"/>
         <Button text="Editar" />
         <Button text="Eliminar" />
     </HBox>
